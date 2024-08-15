@@ -100,7 +100,7 @@ public class RentServiceImpl implements RentService {
 
         // Tidak mengizinkan untuk merubah id pengguna
         if (rent.getUser() != null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Sewa dengan Id ini tidak ditemukan");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Field 'user' tidak boleh di-set saat mengupdate sewa");
         }
 
         // Tidak mengizinkan untuk merubah status completed atau harga
